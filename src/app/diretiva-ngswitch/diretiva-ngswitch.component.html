@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" [class.active]="aba == 'home'" (click)="aba = 'home'" style="cursor: pointer;" >Home</a>
+      <a class="nav-item nav-link" [class.active]="aba == 'mapa'" (click)="aba = 'mapa'" style="cursor: pointer;">Mapa</a>
+      <a class="nav-item nav-link" [class.active]="aba == 'lista'" (click)="aba = 'lista'" style="cursor: pointer;">Lista</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container" [ngSwitch]="aba" style="background-color: aqua;">
+  <p *ngSwitchCase="'mapa'">Modo Mapa Ativado</p>
+  <p *ngSwitchCase="'lista'">Modo Lista Ativado</p>
+  <p *ngSwitchDefault>Modo Home Ativado</p>
+</div>
